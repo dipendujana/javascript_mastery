@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDoApp</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #646363;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-body{
+            display: flex;
+            justify-content: center;
+            background-color: #f5c320;
+            width: 400px;
+            height: 100vh;
+            padding: 50px;
+            border-radius: 10px;
+         
+        }
+    </style>
 </head>
-<body>
-    <h1>javascript_mastery</h1>
+<body><div class="container">
+    <div class="main-body">
+        <div>
+            <h1>To Do List</h1>
+            <input type="text" id="myInput" placeholder="Add your lists">
+            <span onclick="newElement()"><button>Add</button></span>
+            <ul  id="myUL">
+                <li>SunDay</li>
+                <li>MonDay</li>
+            </ul>
+    
+        </div>
+        </div>
+</div>
+
+<script>
+     let myNodelist = document.getElementsByTagName('LI')
+  
+     for (let i = 0; i < myNodelist.length; i++) {
+         const element = array[i];
+         let span = document.createElement('SPAN')
+         span.appendChild(text)
+         myNodelist[i].appendChild(span); 
+     }
+
+     function newElement(){
+         let li = document.createElement('li')
+         var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+            if (inputValue === '') {
+             alert("You must write something!");
+            } else {
+        document.getElementById("myUL").appendChild(li);
+    }
+        document.getElementById("myInput").value = "";
+
+        // var span = document.createElement("SPAN");
+  
+        // span.className = "close";
+        // span.appendChild(txt);
+        // li.appendChild(span);
+
+//         for (i = 0; i < close.length; i++) {
+//             close[i].onclick = function() {
+//             var div = this.parentElement;
+//             div.style.display = "none";
+//         }
+//      }
+}
+
+</script>
+
 </body>
 </html>
